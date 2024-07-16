@@ -1,0 +1,70 @@
+:root {
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+
+    color-scheme: light dark;
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+    font-weight: 500;
+    color: #000000;
+    text-decoration: none !important;
+}
+a:hover {
+    color: #000000;
+    text-decoration: none !important;
+}
+
+body {
+    margin: 0;
+    place-items: center;
+    min-width: 320px;
+    color: #ffffffde;
+    min-height: 100vh;
+    background-image: url(./assets/bgDark.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+h1 {
+    font-size: 3.2em;
+    line-height: 1.1;
+}
+
+.rounded-image {
+    border-radius: 20px !important;
+}
+
+.card-customize {
+    border-radius: 20px !important;
+    color: #333;
+    backdrop-filter: blur(2px);
+    background-color: rgba(255, 255, 255, 0.5);
+}
+.detail-bg {
+    border-radius: 20px !important;
+    color: #333;
+    backdrop-filter: blur(2px);
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.detail-bg Card {
+    border-radius: 20px !important;
+}
+.card-customize:hover {
+    background-color: rgba(255, 255, 255, 0.7);
+    transition: 0.5s;
+}
+
+@media (max-width: 576px) {
+    .rounded-image {
+        border-radius: 20px !important;
+    }
+}
