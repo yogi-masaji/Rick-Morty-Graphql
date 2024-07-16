@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import { Card, Col, Container, Row, Button, Spinner } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { fetchCharacters } from "../service/Api";
@@ -110,7 +110,7 @@ const CharacterList = () => {
                     </Row>
                 )}
             </Container>
-            {data.characters.info.next && (
+            {characters.length > 0 && data.characters.info.next && (
                 <div className="d-flex justify-content-center align-item-center">
                     <Button onClick={loadMoreCharacters} size="lg">
                         LOAD MORE

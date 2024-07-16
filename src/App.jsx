@@ -3,6 +3,7 @@ import CharacterList from "./pages/characterList";
 import CharacterDetail from "./pages/characterDetail";
 import CharacterByLocation from "./pages/characterByLocation";
 import Layout from "./components/layouts/layout";
+import NotFoundPage from "./pages/404";
 const App = () => {
     return (
         <Router>
@@ -17,6 +18,7 @@ const App = () => {
                         path="/location/:id"
                         element={<CharacterByLocation />}
                     />
+                    <Route path="*" element={<NotFoundPage />} />
                 </Routes>
             </Layout>
         </Router>
