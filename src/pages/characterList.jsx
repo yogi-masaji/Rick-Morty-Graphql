@@ -3,6 +3,8 @@ import { Card, Col, Container, Row, Button, Spinner } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { fetchCharacters } from "../service/Api";
 import SearchBar from "../components/searchBar";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css"; // Optional CSS for image effects
 
 const CharacterList = () => {
     const [page, setPage] = useState(1);
@@ -76,7 +78,7 @@ const CharacterList = () => {
             <Container>
                 <h2 style={{ marginBottom: "20px" }}>Characters</h2>
                 {characters.length === 0 && !loading && (
-                    <p className="text-center">Character not found.</p>
+                    <h2 className="text-center">Character not found.</h2>
                 )}
                 {characters.length > 0 && (
                     <Row>
@@ -91,12 +93,12 @@ const CharacterList = () => {
                             >
                                 <Card className="mb-4 card-customize">
                                     <Link to={`/character/${character.id}`}>
-                                        <Card.Img
-                                            variant="top"
-                                            src={character.image}
+                                        <LazyLoadImage
                                             alt={character.name}
-                                            loading="lazy"
+                                            src={character.image}
+                                            effect="blur"
                                             className="p-1 rounded-image"
+                                            width="100%"
                                         />
                                         <Card.Body>
                                             <Card.Title>

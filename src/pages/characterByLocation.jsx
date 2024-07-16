@@ -9,13 +9,24 @@ const CharacterByLocation = () => {
     const [visibleResidents, setVisibleResidents] = useState(10); // Initial number of residents to show
 
     if (loading) return <LoadingPlaceholder />;
-    if (error) return <p>Error: {error.message}</p>;
+    if (error) return <h2 className="text-center">Resident of Unknown</h2>;
 
     const { character } = data;
 
-    // Check if character or location is null
-    if (!character || !character.location) {
-        return <p>Residents of Unknown</p>;
+    // Check if character or location is null or has no residents
+    if (
+        !character ||
+        !character.location ||
+        character.location.residents.length === 0
+    ) {
+        return (
+            <Container>
+                <Link to="/" className="mb-5">
+                    <Button variant="secondary">Back</Button>
+                </Link>
+                <p>Residents of Unknown</p>
+            </Container>
+        );
     }
 
     const loadMoreResidents = () => {
